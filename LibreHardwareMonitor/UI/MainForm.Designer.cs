@@ -51,7 +51,7 @@ namespace LibreHardwareMonitor.UI
             this.saveReportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.resetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFileHardware = new System.Windows.Forms.ToolStripMenuItem();
             this.mainboardMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cpuMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ramMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +87,16 @@ namespace LibreHardwareMonitor.UI
             this.plotWindowMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
             this.plotBottomMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
             this.plotRightMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.themeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.strokeThicknessMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.strokeThickness1ptMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.strokeThickness2ptMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.strokeThickness3ptMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.strokeThickness4ptMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.splitPlotPanelScalingMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitPanelPercentageScalingMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.splitPanelFixedPlotScalingMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
+            this.splitPanelFixedSensorScalingMenuItem = new LibreHardwareMonitor.UI.ToolStripRadioButtonMenuItem();
             this.logSeparatorMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.logSensorsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loggingIntervalMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,7 +145,6 @@ namespace LibreHardwareMonitor.UI
             this.splitContainer = new LibreHardwareMonitor.UI.SplitContainerAdv();
             this.treeView = new Aga.Controls.Tree.TreeViewAdv();
             this.batteryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.psuMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundUpdater = new System.ComponentModel.BackgroundWorker();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -240,7 +249,7 @@ namespace LibreHardwareMonitor.UI
             this.saveReportMenuItem,
             this.MenuItem2,
             this.resetMenuItem,
-            this.menuItem5,
+            this.menuItemFileHardware,
             this.menuItem6,
             this.exitMenuItem});
             this.fileMenuItem.Name = "fileMenuItem";
@@ -268,7 +277,7 @@ namespace LibreHardwareMonitor.UI
             // 
             // menuItem5
             // 
-            this.menuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemFileHardware.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainboardMenuItem,
             this.cpuMenuItem,
             this.ramMenuItem,
@@ -278,9 +287,9 @@ namespace LibreHardwareMonitor.UI
             this.nicMenuItem,
             this.psuMenuItem,
             this.batteryMenuItem});
-            this.menuItem5.Name = "menuItem5";
-            this.menuItem5.Size = new System.Drawing.Size(180, 22);
-            this.menuItem5.Text = "Hardware";
+            this.menuItemFileHardware.Name = "menuItem5";
+            this.menuItemFileHardware.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFileHardware.Text = "Hardware";
             // 
             // mainboardMenuItem
             // 
@@ -437,6 +446,9 @@ namespace LibreHardwareMonitor.UI
             this.separatorMenuItem,
             this.temperatureUnitsMenuItem,
             this.plotLocationMenuItem,
+            this.strokeThicknessMenuItem,
+            this.themeMenuItem,
+            this.splitPlotPanelScalingMenuItem,
             this.logSeparatorMenuItem,
             this.logSensorsMenuItem,
             this.loggingIntervalMenuItem,
@@ -532,6 +544,82 @@ namespace LibreHardwareMonitor.UI
             this.plotRightMenuItem.Name = "plotRightMenuItem";
             this.plotRightMenuItem.Size = new System.Drawing.Size(118, 22);
             this.plotRightMenuItem.Text = "Right";
+            // 
+            // themeMenuItem
+            // 
+            this.themeMenuItem.Name = "themeMenuItem";
+            this.themeMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.themeMenuItem.Text = "Theme";
+            // 
+            // strokeThicknessMenuItem
+            // 
+            this.strokeThicknessMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.strokeThickness1ptMenuItem,
+            this.strokeThickness2ptMenuItem,
+            this.strokeThickness3ptMenuItem,
+            this.strokeThickness4ptMenuItem});
+            this.strokeThicknessMenuItem.Name = "strokeThicknessMenuItem";
+            this.strokeThicknessMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.strokeThicknessMenuItem.Text = "Stroke Thickness";
+            // 
+            // strokeThickness1ptMenuItem
+            // 
+            this.strokeThickness1ptMenuItem.CheckOnClick = true;
+            this.strokeThickness1ptMenuItem.Name = "strokeThickness1ptMenuItem";
+            this.strokeThickness1ptMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.strokeThickness1ptMenuItem.Text = "1pt";
+            // 
+            // strokeThickness2ptMenuItem
+            // 
+            this.strokeThickness2ptMenuItem.CheckOnClick = true;
+            this.strokeThickness2ptMenuItem.Name = "strokeThickness2ptMenuItem";
+            this.strokeThickness2ptMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.strokeThickness2ptMenuItem.Text = "2pt";
+            // 
+            // strokeThickness3ptMenuItem
+            // 
+            this.strokeThickness3ptMenuItem.CheckOnClick = true;
+            this.strokeThickness3ptMenuItem.Name = "strokeThickness3ptMenuItem";
+            this.strokeThickness3ptMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.strokeThickness3ptMenuItem.Text = "3pt";
+            // 
+            // strokeThickness4ptMenuItem
+            // 
+            this.strokeThickness4ptMenuItem.CheckOnClick = true;
+            this.strokeThickness4ptMenuItem.Name = "strokeThickness4ptMenuItem";
+            this.strokeThickness4ptMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.strokeThickness4ptMenuItem.Text = "4pt";
+            // 
+            // attachedPlotPanelScalingMenuItem
+            // 
+            this.splitPlotPanelScalingMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.splitPanelPercentageScalingMenuItem,
+            this.splitPanelFixedPlotScalingMenuItem,
+            this.splitPanelFixedSensorScalingMenuItem});
+            this.splitPlotPanelScalingMenuItem.Name = "attachedPlotPanelScalingMenuItem";
+            this.splitPlotPanelScalingMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.splitPlotPanelScalingMenuItem.Text = "Split Panel Scaling Mode";
+            // 
+            // attachedPanelPercentageScalingMenuItem
+            // 
+            this.splitPanelPercentageScalingMenuItem.CheckOnClick = true;
+            this.splitPanelPercentageScalingMenuItem.Name = "attachedPlotPanelPercentageScalingMenuItem";
+            this.splitPanelPercentageScalingMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.splitPanelPercentageScalingMenuItem.Text = "Percentage Scaling";
+            // 
+            // attachedPanelFixedWidthPlotPanelScalingMenuItem
+            // 
+            this.splitPanelFixedPlotScalingMenuItem.CheckOnClick = true;
+            this.splitPanelFixedPlotScalingMenuItem.Name = "attachedBottomMenuItem";
+            this.splitPanelFixedPlotScalingMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.splitPanelFixedPlotScalingMenuItem.Text = "Fixed Size Plot Panel";
+            // 
+            // attachedPanelFixedWidthSensorPanelScalingMenuItem
+            // 
+            this.splitPanelFixedSensorScalingMenuItem.CheckOnClick = true;
+            this.splitPanelFixedSensorScalingMenuItem.Name = "attachedRightMenuItem";
+            this.splitPanelFixedSensorScalingMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.splitPanelFixedSensorScalingMenuItem.Text = "Fixed Size Sensor Panel";
             // 
             // logSeparatorMenuItem
             // 
@@ -875,8 +963,6 @@ namespace LibreHardwareMonitor.UI
             // 
             // splitContainer
             // 
-            this.splitContainer.Border3DStyle = System.Windows.Forms.Border3DStyle.Raised;
-            this.splitContainer.Color = System.Drawing.SystemColors.Control;
             this.splitContainer.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitContainer.Location = new System.Drawing.Point(12, 12);
             this.splitContainer.Name = "splitContainer";
@@ -1012,10 +1098,14 @@ namespace LibreHardwareMonitor.UI
         private ToolStripRadioButtonMenuItem plotWindowMenuItem;
         private ToolStripRadioButtonMenuItem plotBottomMenuItem;
         private ToolStripRadioButtonMenuItem plotRightMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem splitPlotPanelScalingMenuItem;
+        private ToolStripRadioButtonMenuItem splitPanelPercentageScalingMenuItem;
+        private ToolStripRadioButtonMenuItem splitPanelFixedPlotScalingMenuItem;
+        private ToolStripRadioButtonMenuItem splitPanelFixedSensorScalingMenuItem;
         private System.Windows.Forms.ToolStripMenuItem webMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runWebServerMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serverPortMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuItem5;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFileHardware;
         private System.Windows.Forms.ToolStripMenuItem mainboardMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cpuMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gpuMenuItem;
@@ -1061,6 +1151,12 @@ namespace LibreHardwareMonitor.UI
         private System.Windows.Forms.ToolStripMenuItem psuMenuItem;
         private System.Windows.Forms.ToolStripMenuItem batteryMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundUpdater;
+        private System.Windows.Forms.ToolStripMenuItem themeMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem strokeThicknessMenuItem;
+        private ToolStripRadioButtonMenuItem strokeThickness4ptMenuItem;
+        private ToolStripRadioButtonMenuItem strokeThickness1ptMenuItem;
+        private ToolStripRadioButtonMenuItem strokeThickness2ptMenuItem;
+        private ToolStripRadioButtonMenuItem strokeThickness3ptMenuItem;
     }
 }
 
